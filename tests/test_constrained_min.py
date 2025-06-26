@@ -118,9 +118,9 @@ class TestConstrainedMin(unittest.TestCase):
         ax1.fill(x_fill, y_fill, alpha=0.3, color='lightblue', label='Feasible Region')
         
         ax1.plot(x_range, y1, 'g--', label='y = -x + 1')
-        ax1.axhline(y=1, color='orange', linestyle='--', label='y = 1')
-        ax1.axvline(x=2, color='purple', linestyle='--', label='x = 2')
-        ax1.axhline(y=0, color='brown', linestyle='--', label='y = 0')
+        ax1.axhline(y=1, color='green', linestyle='--', label='y = 1')
+        ax1.axvline(x=2, color='red', linestyle='--', label='x = 2')
+        ax1.axhline(y=0, color='blue', linestyle='--', label='y = 0')
         
         path_array = np.array(x_path)
         ax1.plot(path_array[:, 0], path_array[:, 1], 
@@ -154,11 +154,6 @@ class TestConstrainedMin(unittest.TestCase):
         ax2.set_ylabel('Objective Value (min -(x+y))')
         ax2.set_title('LP: Objective Value vs Iteration')
         ax2.grid(True)
-        
-        # ax2_twin = ax2.twinx()
-        # ax2_twin.plot(range(len(obj_vals)), [-val for val in obj_vals], 'r--', alpha=0.7)
-        # ax2_twin.set_ylabel('Maximized Value (x+y)', color='r')
-        # ax2_twin.tick_params(axis='y', labelcolor='r')
         
         plt.tight_layout()
         plt.show()
